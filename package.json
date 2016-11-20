@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Rust-like Command wrapper over node.js child_process",
   "main": "index.js",
+  "repository": "https://github.com/DoumanAsh/lazy-command.js",
   "scripts": {
     "test": "mocha",
     "lint": "jshint index.js lib/ test/ || exit 0",

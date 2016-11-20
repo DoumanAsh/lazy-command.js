@@ -1,5 +1,6 @@
 lazy-command.js
 ===============
+[![Build Status](https://travis-ci.org/DoumanAsh/lazy-command.js.svg?branch=master)](https://travis-ci.org/DoumanAsh/lazy-command.js) [![Coverage Status](https://coveralls.io/repos/github/DoumanAsh/lazy-command.js/badge.svg)](https://coveralls.io/github/DoumanAsh/lazy-command.js)
 
 Rust-like Command wrapper over node.js child_process
 
