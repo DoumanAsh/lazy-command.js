@@ -244,7 +244,9 @@ describe('Command:', function() {
         };
         const output = Command("git -test").encoding('utf-8').output();
 
-        assert.deepStrictEqual(output, expected_output);
+        assert.strictEqual(output.status, 129);
+        assert.strictEqual(output.stdout, '');
+        assert(output.stderr.includes('Unknown option'));
     });
 
     it('Output not ok Unknown command', function() {
