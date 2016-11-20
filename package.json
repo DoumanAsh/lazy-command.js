@@ -1,6 +1,6 @@
 {
   "name": "lazy-command.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Rust-like Command wrapper over node.js child_process",
   "main": "index.js",
   "repository": "https://github.com/DoumanAsh/lazy-command.js",
