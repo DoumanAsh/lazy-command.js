@@ -4,6 +4,13 @@
   "description": "Rust-like Command wrapper over node.js child_process",
   "main": "index.js",
   "repository": "https://github.com/DoumanAsh/lazy-command.js",
+  "bugs": {
+    "url": "https://github.com/DoumanAsh/lazy-command.js/issues"
+  },
+  "directories": {
+      "lib": "lib/",
+      "doc": "docs/"
+  },
   "scripts": {
     "test": "mocha",
     "lint": "jshint index.js lib/ test/ || exit 0",
@@ -12,6 +19,7 @@
   },
   "keywords": [
     "shell",
+    "subprocess",
     "child_process"
   ],
   "author": "Douman",
