@@ -1,0 +1,23 @@
+{
+  "name": "lazy-command.js",
+  "version": "1.0.0",
+  "description": "Rust-like Command wrapper over node.js child_process",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "lint": "jshint index.js lib/ test/ || exit 0",
+    "doc": "node_modules/.bin/jsdoc --readme README.md -c jsdoc.json",
+    "cov": " node ./node_modules/istanbul/lib/cli.js cover --include-all-sources node_modules/mocha/bin/_mocha && node --use_strict ./node_modules/istanbul/lib/cli.js report --root coverage lcov html text-summary"
+  },
+  "keywords": [
+    "shell",
+    "child_process"
+  ],
+  "author": "Douman",
+  "license": "MIT",
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "jsdoc": "^3.4.3",
+    "mocha": "^3.1.2"
+  }
+}

@@ -1,0 +1,11 @@
+{
+    "source": {
+        "include": [
+            "lib/command.js",
+            "lib/shell_split.js"
+        ]
+    },
+    "plugins": ["plugins/markdown"],
+    "markdown": {
+    }
+}
