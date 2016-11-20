@@ -58,7 +58,7 @@ const status = require('lazy-command.js')('git -status').callback(cb).exec()
 ```javascript
 const Command = require('lazy-command.js');
 
-const result = Command("git -status").encoding('utf-8').sync().output();
+const result = Command("git -status").encoding('utf-8').output();
 
 console.log("status=% | stdout=%s | stderr=%s",
             result.status, result.stdout, result.stderr);
@@ -69,7 +69,7 @@ console.log("status=% | stdout=%s | stderr=%s",
 ```javascript
 const Command = require('lazy-command.js');
 
-const result = Command("git -status").stdio_ignore().sync().status();;
+const result = Command("git -status").stdio_ignore().status();;
 
 console.log("Status=%s", result);
 ```
@@ -83,7 +83,6 @@ const result = Command("git").stdio_ignore()
                              .arg("-status")
                              .current_dir("lib/");
                              .timeout(1000)
-                             .sync()
                              .status();;
 
 console.log("Status=%s", result);
