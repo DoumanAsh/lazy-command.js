@@ -10,6 +10,8 @@ It provides simple & unified builder for Node.js `child_process`
 
 ## Overview
 
+See [Command API](https://doumanash.github.io/lazy-command.js/module-Command-Command.html)
+
 ### Defaults
 
 - Inherits parent's environment.
@@ -30,12 +32,12 @@ By default Command executes asynchronously.
 In order to configure command for synchronous execution you need to call method **sync**
 
 For example to perform **exec** synchronously:
-```
+```javascript
 const status = require('lazy-command.js')('git -status').sync().exec()
 ```
 
 For asynchronous version you need to omit **sync**.
-```
+```javascript
 const status = require('lazy-command.js')('git -status').exec()
 ```
 
@@ -46,7 +48,7 @@ Setting of callback is optional but method **callback** can be used to provide i
 The signature of callback is the same as for any corresponding child_process functions.
 
 For example:
-```
+```javascript
 const cb = (err, stdout, stderr) => {
     console.log("Err=%s | stdout=%s | stderr=%s", err, stdout, stderr);
 };
@@ -71,7 +73,7 @@ console.log("status=% | stdout=%s | stderr=%s",
 ```javascript
 const Command = require('lazy-command.js');
 
-const result = Command("git -status").stdio_ignore().status();;
+const result = Command("git -status").stdio_ignore().status();
 
 console.log("Status=%s", result);
 ```
@@ -85,7 +87,7 @@ const result = Command("git").stdio_ignore()
                              .arg("-status")
                              .current_dir("lib/");
                              .timeout(1000)
-                             .status();;
+                             .status();
 
 console.log("Status=%s", result);
 ```

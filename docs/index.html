@@ -48,7 +48,8 @@
 <a href="https://npmjs.org/package/lazy-command.js"><img src="https://img.shields.io/npm/v/lazy-command.js.svg" alt="Package version"></a></p>
 <p>Rust-like Command wrapper over node.js child_process</p>
 <p>It provides simple &amp; unified builder for Node.js <code>child_process</code></p>
-<h2>Overview</h2><h3>Defaults</h3><ul>
+<h2>Overview</h2><p>See <a href="https://doumanash.github.io/lazy-command.js/module-Command-Command.html">Command API</a></p>
+<h3>Defaults</h3><ul>
 <li>Inherits parent's environment.</li>
 <li>Inherits parent's current directory.</li>
 </ul>
@@ -62,11 +63,11 @@
 <h3>Sync vs Async</h3><p>By default Command executes asynchronously.</p>
 <p>In order to configure command for synchronous execution you need to call method <strong>sync</strong></p>
 <p>For example to perform <strong>exec</strong> synchronously:</p>
-<pre class="prettyprint source"><code>const status = require('lazy-command.js')('git -status').sync().exec()</code></pre><p>For asynchronous version you need to omit <strong>sync</strong>.</p>
-<pre class="prettyprint source"><code>const status = require('lazy-command.js')('git -status').exec()</code></pre><h3>Async callback</h3><p>Setting of callback is optional but method <strong>callback</strong> can be used to provide it.</p>
+<pre class="prettyprint source lang-javascript"><code>const status = require('lazy-command.js')('git -status').sync().exec()</code></pre><p>For asynchronous version you need to omit <strong>sync</strong>.</p>
+<pre class="prettyprint source lang-javascript"><code>const status = require('lazy-command.js')('git -status').exec()</code></pre><h3>Async callback</h3><p>Setting of callback is optional but method <strong>callback</strong> can be used to provide it.</p>
 <p>The signature of callback is the same as for any corresponding child_process functions.</p>
 <p>For example:</p>
-<pre class="prettyprint source"><code>const cb = (err, stdout, stderr) => {
+<pre class="prettyprint source lang-javascript"><code>const cb = (err, stdout, stderr) => {
     console.log(&quot;Err=%s | stdout=%s | stderr=%s&quot;, err, stdout, stderr);
 };
 const status = require('lazy-command.js')('git -status').callback(cb).exec()</code></pre><h2>Examples</h2><h4>Collect all output of command</h4><pre class="prettyprint source lang-javascript"><code>const Command = require('lazy-command.js');
@@ -76,7 +77,7 @@ const result = Command(&quot;git -status&quot;).encoding('utf-8').output();
 console.log(&quot;status=% | stdout=%s | stderr=%s&quot;,
             result.status, result.stdout, result.stderr);</code></pre><h4>Just get status code</h4><pre class="prettyprint source lang-javascript"><code>const Command = require('lazy-command.js');
 
-const result = Command(&quot;git -status&quot;).stdio_ignore().status();;
+const result = Command(&quot;git -status&quot;).stdio_ignore().status();
 
 console.log(&quot;Status=%s&quot;, result);</code></pre><h4>Let's make lot of configuration</h4><pre class="prettyprint source lang-javascript"><code>const Command = require('lazy-command.js');
 
@@ -84,7 +85,7 @@ const result = Command(&quot;git&quot;).stdio_ignore()
                              .arg(&quot;-status&quot;)
                              .current_dir(&quot;lib/&quot;);
                              .timeout(1000)
-                             .status();;
+                             .status();
 
 console.log(&quot;Status=%s&quot;, result);</code></pre></article>
     </section>
