@@ -118,18 +118,18 @@ describe('Command:', function() {
         }).execFile()
     });
 
-    it('Exec ok Sync', function() {
+    it('Exec File ok Sync', function() {
         const result = Command("echo test").sync()
                                            .encoding('utf-8')
-                                           .exec()
+                                           .execFile()
                                            .trim();
 
         assert.strictEqual(result, 'test');
     });
 
-    it('Exec not ok Sync', function() {
+    it('Exec File not ok Sync', function() {
         function exec() {
-            Command("git status --test").sync().stdio_ignore().exec()
+            Command("git status --test").sync().stdio_ignore().execFile()
         }
 
         assert.throws(exec);
